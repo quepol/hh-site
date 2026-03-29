@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hillary Hartley</title>
+  <meta name="description" content="Hillary Hartley — technologist, civic leader, and public-sector innovator.">
+  <meta property="og:title" content="Hillary Hartley">
+  <meta property="og:description" content="Technologist, civic leader, and public-sector innovator.">
+  <meta property="og:image" content="hillary.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #faf9f7;
+      --color-surface: #ffffff;
+      --color-text: #1a1a1a;
+      --color-muted: #5c5c5c;
+      --color-accent: #2d5be3;
+      --color-accent-hover: #1a3fad;
+      --color-border: #e8e4de;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    html {
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── Header ─────────────────────────────────────── */
+    header {
+      padding: 4rem 0 2rem;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 3px solid var(--color-border);
+      flex-shrink: 0;
+    }
+
+    .profile-text h1 {
+      font-family: var(--font-serif);
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .profile-text .tagline {
+      font-size: 1rem;
+      color: var(--color-muted);
+      font-weight: 400;
+    }
+
+    /* ── Divider ─────────────────────────────────────── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: 2rem 0;
+    }
+
+    /* ── Bio ─────────────────────────────────────────── */
+    .bio {
+      padding-bottom: 2.5rem;
+    }
+
+    .bio p {
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+      color: var(--color-text);
+    }
+
+    .bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio a {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.15s;
+    }
+
+    .bio a:hover {
+      color: var(--color-accent-hover);
+    }
+
+    /* ── Links ───────────────────────────────────────── */
+    .links-section {
+      border-top: 1px solid var(--color-border);
+      padding: 2rem 0 3rem;
+    }
+
+    .links-section h2 {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .link-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .link-list a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .link-list a:hover {
+      color: var(--color-accent);
+    }
+
+    .link-list a .link-icon {
+      width: 18px;
+      height: 18px;
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .link-list a .link-label {
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .link-list a:hover .link-label {
+      border-color: var(--color-accent);
+    }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: 1.5rem 0;
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (min-width: 560px) {
+      .profile {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2.5rem;
+      }
+
+      .profile-text h1 {
+        font-size: 3rem;
+        margin-top: 0.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="profile">
+        <img
+          class="profile-photo"
+          src="hillary.jpg"
+          alt="Hillary Hartley"
+        >
+        <div class="profile-text">
+          <h1>Hillary Hartley</h1>
+          <p class="tagline">Technologist &amp; civic leader</p>
+        </div>
+      </div>
+    </header>
+
+    <hr>
+
+    <main class="bio">
+      <p>
+        Hillary Hartley has spent nearly three decades at the intersection of design, technology,
+        and democracy — making government work better for the people it serves. She got her start
+        as a web designer for <a href="https://arkansas.gov" rel="noopener">Arkansas.gov</a> in 1997,
+        and went on to create <a href="https://web.archive.org/web/2004/http://mypollingplace.com" rel="noopener">MyPollingPlace.com</a>,
+        the first nationwide polling-place lookup tool, during the 2004 U.S. election cycle. Before
+        entering federal service, she served as Director of Integrated Marketing at NIC, helping
+        thirty state-government partners adopt 21st-century tools for citizen engagement.
+      </p>
+      <p>
+        In 2013, Hartley joined the White House as a
+        <a href="https://presidentialinnovationfellows.gov" rel="noopener">Presidential Innovation Fellow</a>
+        at the General Services Administration, working on MyUSA — a project to reimagine how Americans
+        interact with their government online. She went on to co-found
+        <a href="https://18f.gsa.gov" rel="noopener">18F</a>, GSA's pioneering in-house digital
+        services team, growing it from ten people to 250 designers, developers, and product managers
+        delivering critical services for U.S. departments and agencies. That work earned her a spot on
+        <a href="https://www.fastcompany.com/person/hillary-hartley" rel="noopener"><em>Fast Company</em>'s
+        100 Most Creative People of 2015</a>.
+      </p>
+      <p>
+        In 2017, Hartley
+        <a href="https://betakit.com/hillary-hartley-named-ontarios-first-chief-digital-officer/" rel="noopener">made history</a>
+        as Ontario's first-ever Chief Digital and Data Officer — and
+        Deputy Minister for Digital Government — a role she held until 2023. Leading the
+        <a href="https://www.ontario.ca/page/ontario-digital-service" rel="noopener">Ontario Digital Service</a>,
+        she guided
+        <a href="https://www.govtech.com/workforce/18fs-hillary-hartley-becomes-first-chief-digital-officer-of-ontario-canada.html" rel="noopener">one of the largest public-sector digital transformations in North American history</a>,
+        building a team from scratch, operationalizing the landmark
+        <em>Simpler, Faster, Better Services Act</em> (2019), and redesigning services used by
+        millions of Ontarians.
+      </p>
+      <p>
+        Most recently, Hartley served as CEO of
+        <a href="https://www.usdigitalresponse.org" rel="noopener">U.S. Digital Response</a>,
+        a nonprofit, nonpartisan organization with a corps of more than 10,000 volunteer technologists
+        who are paired with state and local governments to rapidly deliver technology products and
+        build lasting public-sector capacity. Today she works with organizations and leaders across
+        the public sector to help them understand and create the conditions for digital transformation —
+        the kind that outlasts any particular administration or initiative. She is co-Chair of
+        <a href="https://fwd50.com" rel="noopener">FWD50</a>, the leading global digital government
+        conference, where she has been an advisor and speaker since its founding in 2017.
+      </p>
+    </main>
+
+    <section class="links-section" aria-label="Find Hillary elsewhere">
+      <h2>Find me elsewhere</h2>
+      <ul class="link-list">
+
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Hillary_Hartley" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="link-label">Wikipedia</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.linkedin.com/in/hillaryhartley/" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span class="link-label">LinkedIn</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.fastcompany.com/person/hillary-hartley" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span class="link-label">Fast Company — 100 Most Creative People (2015)</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://computerhistory.org/profile/hillary-hartley/" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span class="link-label">Computer History Museum</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://hillary.medium.com/" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-5"/><path d="M11 13l9-9"/><path d="M15 3h6v6"/></svg>
+            <span class="link-label">Writing on Medium</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://x.com/hillary" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span class="link-label">@hillary on X</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://openpublic.cc" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <span class="link-label">OpenPublic</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://fwd50.com" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span class="link-label">FWD50</span>
+          </a>
+        </li>
+
+      </ul>
+    </section>
+
+    <footer>
+      <p>hillaryhartley.com</p>
+    </footer>
+
+  </div>
+</body>
+</html>
