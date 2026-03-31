@@ -180,7 +180,7 @@ hr {
 
 .links-section h2 {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -234,9 +234,11 @@ hr {
 
 .media-section > h2 {
   font-family: var(--font-sans);
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
   margin-bottom: 1.75rem;
 }
 
