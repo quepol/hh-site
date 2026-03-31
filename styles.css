@@ -92,6 +92,7 @@ header {
 }
 
 .social-icons a {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -101,6 +102,29 @@ header {
   color: var(--color-muted);
   text-decoration: none;
   transition: color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+
+.social-icons a::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  padding: 3px 7px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.social-icons a:hover::after,
+.social-icons a:focus-visible::after {
+  opacity: 1;
 }
 
 .social-icons a:hover,
