@@ -146,13 +146,13 @@ hr {
 .bio ul li {
   padding-left: 1.25rem;
   border-left: 2px solid var(--color-border);
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--color-text);
 }
 
 .bio p {
   margin-bottom: 1.4rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--color-text);
 }
 
@@ -234,11 +234,9 @@ hr {
 
 .media-section > h2 {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-muted);
+  color: var(--color-text);
   margin-bottom: 1.75rem;
 }
 
