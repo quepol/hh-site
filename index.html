@@ -11,261 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --color-bg: #faf9f7;
-      --color-surface: #ffffff;
-      --color-text: #1a1a1a;
-      --color-muted: #5c5c5c;
-      --color-accent: #2d5be3;
-      --color-accent-hover: #1a3fad;
-      --color-border: #e8e4de;
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-    }
-
-    html {
-      font-size: 17px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body {
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      font-family: var(--font-sans);
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* ── Header ─────────────────────────────────────── */
-    header {
-      padding: 4rem 0 2rem;
-    }
-
-    .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2rem;
-    }
-
-    .profile-photo {
-      width: 160px;
-      aspect-ratio: 4 / 5;
-      border-radius: 10px;
-      object-fit: cover;
-      object-position: top center;
-      border: 2px solid var(--color-border);
-      flex-shrink: 0;
-    }
-
-    .profile-text h1 {
-      font-family: var(--font-serif);
-      font-size: 2.6rem;
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.4rem;
-    }
-
-    .profile-text .tagline {
-      font-size: 1rem;
-      color: var(--color-muted);
-      font-weight: 400;
-    }
-
-    /* ── Intro statement ─────────────────────────────── */
-    .intro-statement {
-      font-size: 1.15rem;
-      font-weight: 500;
-      line-height: 1.5;
-      color: var(--color-text);
-      padding: 1.75rem 0 0.25rem;
-      max-width: 640px;
-    }
-
-    /* ── Social icons ────────────────────────────────── */
-    .social-icons {
-      display: flex;
-      flex-direction: row;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .social-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
-      color: var(--color-muted);
-      text-decoration: none;
-      transition: color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
-    }
-
-    .social-icons a:hover,
-    .social-icons a:focus-visible {
-      color: var(--color-accent);
-      background-color: rgba(45, 91, 227, 0.08);
-      transform: translateY(-2px);
-    }
-
-    .social-icons a:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-    }
-
-    .social-icons svg {
-      width: 22px;
-      height: 22px;
-      display: block;
-      flex-shrink: 0;
-    }
-
-    /* ── Divider ─────────────────────────────────────── */
-    hr {
-      border: none;
-      border-top: 1px solid var(--color-border);
-      margin: 2rem 0;
-    }
-
-    /* ── Bio ─────────────────────────────────────────── */
-    .bio {
-      padding-bottom: 2.5rem;
-    }
-
-    .bio ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.4rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .bio ul li {
-      padding-left: 1.25rem;
-      border-left: 2px solid var(--color-border);
-      font-size: 1.05rem;
-      color: var(--color-text);
-    }
-
-    .bio p {
-      margin-bottom: 1.4rem;
-      font-size: 1.05rem;
-      color: var(--color-text);
-    }
-
-    .bio p:last-child {
-      margin-bottom: 0;
-    }
-
-    .bio a {
-      color: var(--color-accent);
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
-      transition: color 0.15s;
-    }
-
-    .bio a:hover {
-      color: var(--color-accent-hover);
-    }
-
-    /* ── Links ───────────────────────────────────────── */
-    .links-section {
-      border-top: 1px solid var(--color-border);
-      padding: 2rem 0 3rem;
-    }
-
-    .links-section h2 {
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-muted);
-      margin-bottom: 1.25rem;
-    }
-
-    .link-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .link-list a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--color-text);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: color 0.15s;
-    }
-
-    .link-list a:hover {
-      color: var(--color-accent);
-    }
-
-    .link-list a .link-icon {
-      width: 18px;
-      height: 18px;
-      opacity: 0.5;
-      flex-shrink: 0;
-    }
-
-    .link-list a .link-label {
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.15s;
-    }
-
-    .link-list a:hover .link-label {
-      border-color: var(--color-accent);
-    }
-
-    /* ── Footer ──────────────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--color-border);
-      padding: 1.5rem 0;
-      font-size: 0.85rem;
-      color: var(--color-muted);
-    }
-
-    /* ── Responsive ──────────────────────────────────── */
-    @media (min-width: 560px) {
-      .profile {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 2.5rem;
-      }
-
-      .profile-photo {
-        width: 200px;
-      }
-
-      .profile-text h1 {
-        font-size: 3rem;
-        margin-top: 0.2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
@@ -417,21 +163,206 @@
       </p>
     </main>
 
-    <section class="links-section" aria-label="Find Hillary elsewhere">
-      <h2>Find me elsewhere</h2>
+    <section class="media-section" aria-label="Media, talks, and books">
+      <h2>Media &amp; Writing</h2>
+
+      <div class="media-books">
+        <div class="book-card">
+          <div class="book-cover">
+            <a href="https://www.indigo.ca/en-ca/digital-government-excellence-lessons-from-effective-digital-leaders/ec693fb2-f2ff-3744-afaf-2c419f088765.html" rel="noopener">
+              <img src="https://cdn.kobo.com/book-images/Images/4b368226-79a9-458b-b361-4a0f4dcb136e/300/300/False/image.jpg" alt="Digital Government Excellence book cover">
+            </a>
+          </div>
+          <div class="book-info">
+            <h3>Digital Government Excellence: Lessons from Effective Digital Leaders</h3>
+            <p class="book-role">Chapter &mdash; Hillary Hartley, Ontario Digital Service</p>
+            <p class="book-meta">Siim Sikkut &nbsp;&middot;&nbsp; Wiley &nbsp;&middot;&nbsp; 2022</p>
+            <a href="https://www.indigo.ca/en-ca/digital-government-excellence-lessons-from-effective-digital-leaders/ec693fb2-f2ff-3744-afaf-2c419f088765.html" rel="noopener" class="book-link">View on Indigo &rarr;</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover">
+            <a href="https://www.indigo.ca/en-ca/government-digital-the-quest-to-regain-public-trust/9781459742062.html" rel="noopener">
+              <img src="https://dynamic.indigoimages.ca/v1/books/books/1459742060/1.jpg" alt="Government Digital: The Quest to Regain Public Trust book cover">
+            </a>
+          </div>
+          <div class="book-info">
+            <h3>Government Digital: The Quest to Regain Public Trust</h3>
+            <p class="book-role">Chapter 5: &ldquo;On Openness&rdquo; &mdash; contributor</p>
+            <p class="book-meta">Alex Benay &nbsp;&middot;&nbsp; Dundurn Press &nbsp;&middot;&nbsp; 2018</p>
+            <a href="https://www.indigo.ca/en-ca/government-digital-the-quest-to-regain-public-trust/9781459742062.html" rel="noopener" class="book-link">View on Indigo &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="media-books-divider">
+
+      <div class="media-era">
+        <h3>Thought Leadership</h3>
+        <ul class="media-list">
+          <li><a href="https://www.lawfaremedia.org/article/learning-from-the-legacy-of-18f" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+            <span class="media-item-text">Learning From the Legacy of 18F<span class="media-source">Lawfare</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=OTNkotU0EO0" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Hillary Hartley and David Eaves on 18F, Its Origin, Legacy, and Lessons<span class="media-source">Lawfare Daily</span></span>
+          </a></li>
+          <li><a href="https://medium.com/the-service-gazette/digital-service-resilience-92136436c341" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+            <span class="media-item-text">Digital service resilience. What endures when government innovation units close.<span class="media-source">The Service Gazette</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=KQj7M-hekE8" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">How Can a New Federal Government Deliver Better Digital Services?<span class="media-source">Code for Canada</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=o9QD4bfPP64" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Stepping Up to the Digital Challenge<span class="media-source">Think Digital</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=o-nZ3G14zyU" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">The End of the Ontario Digital Service and What it Means<span class="media-source">Think Digital</span></span>
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="media-era">
+        <h3>U.S. Digital Response &middot; 2021&ndash;present</h3>
+        <ul class="media-list">
+          <li><a href="https://fedscoop.com/hillary-hartley-interview/" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+            <span class="media-item-text">US Digital Response CEO: Nonprofit can act as a bridge between the White House and State gov<span class="media-source">FedScoop</span></span>
+          </a></li>
+          <li><a href="https://www.govtech.com/civic/hillary-hartley-to-lead-u-s-digital-response-as-ceo" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+            <span class="media-item-text">Hillary Hartley to Lead U.S. Digital Response as CEO<span class="media-source">GovTech</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=LowFsFfExvY" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Leading the way forward<span class="media-source">Code for America 2024</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=n44NdHbqxTk" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Digital Public Benefits: Outlook 2025<span class="media-source">BenCon 2024</span></span>
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="media-era">
+        <h3>Ontario Digital Service &middot; 2017&ndash;2021</h3>
+        <ul class="media-list">
+          <li><a href="https://www.youtube.com/watch?v=LvvKpF83oII" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">How do democracies rebuild trust in government?<span class="media-source">FWD50 2021</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=kuFckRCk6Mo" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">The 2019 Regional Digital Government Summit<span class="media-source">FWD50</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=1x-L_F5uktU" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Ontario&rsquo;s Chief Digital Officer &mdash; bringing a user-centric approach to government<span class="media-source">Tech Newsday</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=v_KdlhrLKME" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">In conversation with Canada&rsquo;s leading digital government experts<span class="media-source">FWDThinking Ep. 5</span></span>
+          </a></li>
+          <li><a href="https://www.cbc.ca/news/canada/toronto/ontario-chief-digital-officer-1.4157411" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+            <span class="media-item-text">Checking in with Ontario&rsquo;s first chief digital officer<span class="media-source">CBC News</span></span>
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="media-era">
+        <h3>Pandemic Response &middot; 2020&ndash;2021</h3>
+        <ul class="media-list">
+          <li><a href="https://www.youtube.com/watch?v=50ySLVSuQcc" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Delivering accessible digital services during a pandemic<span class="media-source">TrueNorthTV</span></span>
+          </a></li>
+          <li><a href="https://www.rbc.com/en/thought-leadership/never-waste-a-crisis-how-canada-can-build-the-digital-government-of-the-future/" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 9a6 6 0 0 1 12 0"/><rect x="1" y="9" width="3" height="5" rx="1.5"/><rect x="12" y="9" width="3" height="5" rx="1.5"/></svg>
+            <span class="media-item-text">Never Waste a Crisis: How Canada Can Build the Digital Government of the Future<span class="media-source">RBC</span></span>
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="media-era">
+        <h3>18F &amp; Federal Government &middot; 2013&ndash;2017</h3>
+        <ul class="media-list">
+          <li><a href="https://computerhistory.org/events/an-evening-with-us-digital/" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+            <span class="media-item-text">An Evening with U.S. Digital<span class="media-source">Computer History Museum</span></span>
+          </a></li>
+          <li><a href="https://www.fastcompany.com/3046756/obama-and-his-geeks" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+            <span class="media-item-text">Obama and His Geeks<span class="media-source">Fast Company</span></span>
+          </a></li>
+          <li><a href="https://www.fastcompany.com/3046752/hail-to-the-geek" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+            <span class="media-item-text">Hail to the Geek<span class="media-source">Fast Company</span></span>
+          </a></li>
+          <li><a href="https://www.fastcompany.com/3045470/the-100-most-creative-people-in-business-2015" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+            <span class="media-item-text">100 Most Creative People in Business 2015<span class="media-source">Fast Company</span></span>
+          </a></li>
+          <li><a href="https://www.fastcompany.com/3043881/government-groundbreakers" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+            <span class="media-item-text">Government Groundbreakers<span class="media-source">Fast Company</span></span>
+          </a></li>
+          <li><a href="https://steveblank.com/2016/03/29/entrepreneurs-are-everywhere-show-no-26-javier-saade-and-hillary-hartley/" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 9a6 6 0 0 1 12 0"/><rect x="1" y="9" width="3" height="5" rx="1.5"/><rect x="12" y="9" width="3" height="5" rx="1.5"/></svg>
+            <span class="media-item-text">Entrepreneurs are Everywhere, Show No. 26<span class="media-source">Steve Blank</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=hYVGAYwMOk8" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 9a6 6 0 0 1 12 0"/><rect x="1" y="9" width="3" height="5" rx="1.5"/><rect x="12" y="9" width="3" height="5" rx="1.5"/></svg>
+            <span class="media-item-text">18F and Open Source Software in the U.S. Federal Government<span class="media-source">Changelog</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=QU234SBSfsI" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Dot Gov: Government&rsquo;s Digital Transformation<span class="media-source">CityLab 2015</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=SWFC2rUzkoI" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">The Government Talent Pipeline<span class="media-source">Code for America Summit 2015</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=yC49aoS1xnE" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Lean Startup in Big Government<span class="media-source">Lean Startup Week 2016</span></span>
+          </a></li>
+          <li><a href="https://www.youtube.com/watch?v=gV7WWmU5yLw" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Hillary Hartley discusses 18F<span class="media-source">GovernmentTechnology</span></span>
+          </a></li>
+          <li><a href="https://fedscoop.com/video/hillary-hartley-talks-18fs-history-and-where-its-going/" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Hillary Hartley talks 18F&rsquo;s history and where it&rsquo;s going<span class="media-source">FedScoop</span></span>
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="media-era">
+        <h3>NIC &amp; Early Career &middot; pre-2013</h3>
+        <ul class="media-list">
+          <li><a href="https://www.youtube.com/watch?v=I_nwMBztxWw" rel="noopener">
+            <svg class="media-type-icon" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 3l4.5 3-4.5 3V3z"/></svg>
+            <span class="media-item-text">Gov 2.0: What have you done for me lately?<span class="media-source">Gov 2.0 L.A. 2013</span></span>
+          </a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="links-section" aria-label="Links">
+      <h2>Elsewhere</h2>
       <ul class="link-list">
 
         <li>
           <a href="mailto:hi@hillaryhartley.com">
             <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
             <span class="link-label">hi@hillaryhartley.com</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://en.wikipedia.org/wiki/Hillary_Hartley" rel="noopener">
-            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <span class="link-label">Wikipedia</span>
           </a>
         </li>
 
@@ -443,9 +374,9 @@
         </li>
 
         <li>
-          <a href="https://hillary.medium.com/" rel="noopener">
-            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-5"/><path d="M11 13l9-9"/><path d="M15 3h6v6"/></svg>
-            <span class="link-label">Writing on Medium</span>
+          <a href="https://bsky.app/profile/hillaryh.bsky.social" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.335 5.144C4.29 3.67 1.5 3.135 1.5 5.902c0 .547.314 4.58.501 5.25.638 2.217 3.093 2.913 5.25 2.6-.11.018-.219.033-.329.046C3.64 14.254 1.2 15.53 4.055 18.58 7.478 22.216 8.98 16.9 9.75 14.3c.77 2.6 2.272 7.916 5.695 4.28 2.855-3.05.415-4.326-2.867-4.782a5.1 5.1 0 0 1-.329-.046c2.157.312 4.612-.383 5.25-2.6.187-.67.501-4.703.501-5.25 0-2.767-2.79-2.232-4.835-.758C10.887 7.22 9.34 10 9 10.8c-.34-.8-1.887-3.58-2.665-5.656z"/></svg>
+            <span class="link-label">@hillaryh on BlueSky</span>
           </a>
         </li>
 
@@ -453,6 +384,20 @@
           <a href="https://x.com/hillary" rel="noopener">
             <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             <span class="link-label">@hillary on X</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://hillary.medium.com/" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+            <span class="link-label">Medium</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Hillary_Hartley" rel="noopener">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="link-label">Wikipedia</span>
           </a>
         </li>
 
