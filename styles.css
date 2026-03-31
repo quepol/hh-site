@@ -322,7 +322,7 @@ hr {
 
 .media-era h3 {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -360,11 +360,14 @@ hr {
   margin-top: 3px;
 }
 
+.media-item-text {
+  display: flex;
+  flex-direction: column;
+}
+
 .media-source {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--color-muted);
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
 /* ── Footer ──────────────────────────────────────── */
